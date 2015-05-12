@@ -7,7 +7,7 @@
 
 namespace lubaogui\athens\helpers;
 
-use lubaogui\athens\Metronic;
+use lubaogui\athens\Athens;
 use yii\helpers\Html;
 
 /**
@@ -36,29 +36,30 @@ class Layout {
      */
     private static function _bodyOptions($options)
     {
-        Html::addCssClass($options, 'page-sidebar-closed-hide-logo');
-
-        if (Metronic::LAYOUT_BOXED === Metronic::getComponent()->layoutOption)
-        {
-            Html::addCssClass($options, 'page-boxed');
-        }
-
-        if (Metronic::HEADER_FIXED === Metronic::getComponent()->headerOption)
+        if (Athens::HEADER_FIXED === Athens::getComponent()->headerOption)
         {
             Html::addCssClass($options, 'page-header-fixed');
         }
 
-        if (Metronic::SIDEBAR_POSITION_RIGHT === Metronic::getComponent()->sidebarPosition)
+        Html::addCssClass($options, 'page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-container-bg-solid');
+
+        if (Athens::LAYOUT_BOXED === Athens::getComponent()->layoutOption)
+        {
+            Html::addCssClass($options, 'page-boxed');
+        }
+
+
+        if (Athens::SIDEBAR_POSITION_RIGHT === Athens::getComponent()->sidebarPosition)
         {
             Html::addCssClass($options, 'page-sidebar-reversed');
         }
 
-        if (Metronic::SIDEBAR_FIXED === Metronic::getComponent()->sidebarOption)
+        if (Athens::SIDEBAR_FIXED === Athens::getComponent()->sidebarOption)
         {
             Html::addCssClass($options, 'page-sidebar-fixed');
         }
 
-        if (Metronic::FOOTER_FIXED === Metronic::getComponent()->footerOption)
+        if (Athens::FOOTER_FIXED === Athens::getComponent()->footerOption)
         {
             Html::addCssClass($options, 'page-footer-fixed');
         }
@@ -74,7 +75,7 @@ class Layout {
     {
         Html::addCssClass($options, 'page-header navbar');
 
-        if (Metronic::HEADER_FIXED === Metronic::getComponent()->headerOption)
+        if (Athens::HEADER_FIXED === Athens::getComponent()->headerOption)
         {
             Html::addCssClass($options, 'navbar-fixed-top');
         }

@@ -10,7 +10,7 @@ namespace lubaogui\athens\bundles;
 
 use yii\web\AssetBundle;
 use yii\helpers\ArrayHelper;
-use lubaogui\athens\Metronic;
+use lubaogui\athens\Athens;
 
 class StyleBasedAsset extends AssetBundle {
 
@@ -46,10 +46,10 @@ class StyleBasedAsset extends AssetBundle {
      * @var array style based css
      */
     private $styleBasedCss = [
-        Metronic::STYLE_SQUARE => [
+        Athens::STYLE_SQUARE => [
             'global/css/components.css',
         ],
-        Metronic::STYLE_ROUNDED => [
+        Athens::STYLE_ROUNDED => [
             'global/css/components-rounded.css',
         ],
     ];
@@ -69,7 +69,7 @@ class StyleBasedAsset extends AssetBundle {
      */
     private function _handleStyleBased()
     {
-        $this->css = ArrayHelper::merge($this->styleBasedCss[Metronic::getComponent()->style], $this->css);
+        $this->css = ArrayHelper::merge($this->styleBasedCss[Athens::getComponent()->style], $this->css);
     }
 
 }

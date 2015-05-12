@@ -9,7 +9,7 @@
 namespace lubaogui\athens\bundles;
 
 use yii\web\AssetBundle;
-use lubaogui\athens\Metronic;
+use lubaogui\athens\Athens;
 
 class ThemeAsset extends AssetBundle {
 
@@ -31,8 +31,8 @@ class ThemeAsset extends AssetBundle {
      */
     public $css = [
         'css/layout.css',
-        'css/themes/{theme}.css',
         'css/custom.css',
+        'css/themes/default.css',
     ];
 
     /**
@@ -41,7 +41,7 @@ class ThemeAsset extends AssetBundle {
     public $js = [
         'scripts/layout.js',
         'scripts/demo.js',
-#       'scripts/index.js',
+        'scripts/quick-sidebar.js',
     ];
 
     /**
@@ -61,7 +61,7 @@ class ThemeAsset extends AssetBundle {
      */
     private function _handleSourcePath()
     {
-        $self->sourcePath .= Athens::getComponent()->version;
+        $this->sourcePath .= Athens::getComponent()->version;
     }
 
     /**

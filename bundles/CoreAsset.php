@@ -43,6 +43,7 @@ class CoreAsset extends AssetBundle {
         'global/plugins/jquery-slimscroll/jquery.slimscroll.min.js',
         'global/plugins/jquery.blockui.min.js',
         'global/plugins/jquery.cokie.min.js',
+        'global/plugins/jquery-migrate.min.js',
         'global/plugins/uniform/jquery.uniform.min.js',
         'global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
         'global/scripts/metronic.js',

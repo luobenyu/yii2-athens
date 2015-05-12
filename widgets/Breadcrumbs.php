@@ -61,6 +61,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     public function init()
     {
         parent::init();
+        $this->options = [];
         Html::addCssClass($this->options, 'page-breadcrumb');
     }
 

@@ -111,9 +111,9 @@ class Nav extends \yii\bootstrap\Nav {
      */
     public function init()
     {
+        parent::init();
         Html::addCssClass($this->options, $this->navbar);
         Html::addCssClass($this->options, $this->position);
-        parent::init();
     }
 
     /**

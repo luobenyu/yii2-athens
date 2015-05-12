@@ -7,7 +7,7 @@
 
 namespace lubaogui\athens\widgets;
 
-use lubaogui\athens\Metronic;
+use lubaogui\athens\Athens;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
@@ -16,7 +16,7 @@ use yii\helpers\Url;
 use yii\widgets\ActiveForm as CoreActiveForm;
 
 /**
- * Metronic menu displays a multi-level menu using nested HTML lists.
+ * Athens menu displays a multi-level menu using nested HTML lists.
  *
  * The main property of Menu is [[items]], which specifies the possible items in the menu.
  * A menu item can contain sub-items which specify the sub-menu under that menu item.
@@ -108,7 +108,7 @@ class Menu extends \yii\widgets\Menu {
      */
     public function init()
     {
-        Metronic::registerThemeAsset($this->getView());
+        Athens::registerThemeAsset($this->getView());
 
         $this->_initOptions();
     }
@@ -288,7 +288,7 @@ class Menu extends \yii\widgets\Menu {
     {
         Html::addCssClass($this->options, 'page-sidebar-menu');
 
-        if (Metronic::SIDEBAR_MENU_HOVER === Metronic::getComponent()->sidebarMenu)
+        if (Athens::SIDEBAR_MENU_HOVER === Athens::getComponent()->sidebarMenu)
         {
             Html::addCssClass($this->options, 'page-sidebar-menu-hover-submenu');
         }
